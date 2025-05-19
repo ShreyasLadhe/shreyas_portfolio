@@ -1,12 +1,31 @@
-# React + Vite
+# Shreyas Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! This project showcases my skills, projects, and experience as a Cloud Engineer.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- My Project highlights with descriptions and demo links
+- About me section
+- Contact information
+- Testimonials
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ViteJS + React
+- ThreeJS for 3D objects
+- Framer motion for smooth animations
+- EmailJS for email functionality
+
+## 📸 Screenshots
+
+![3D Hero Section](public/screenshots/home.png)
+![Animated Testimonials](public/screenshots/testimonials.png)
+![Elegant Contact Form with EmailJS Integration](public/screenshots/contact.png)
+
+## 📬 Contact
+
+- **Email:** [shreyasl9819@gmail.com](mailto:shreyasl9819@gmail.com)
+- **LinkedIn:** [Shreyas Ladhe - Linkedin](www.linkedin.com/in/shreyasladhe)
+- **Portfolio:** [your-portfolio-link.com](https://your-portfolio-link.com)
+
+> Thank you for visiting my portfolio! Feel free to reach out for collaboration or opportunities.
