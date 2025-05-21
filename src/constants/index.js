@@ -130,7 +130,7 @@ export const mySocials = [
 export const experiences = [
   {
     title: "AWS Cloud Engineer",
-    job: "F13 Technologies (10+ months)",
+    job: "F13 Technologies - New Delhi (Remote)",
     date: "Aug 2024 - Present",
     contents: [
       "Led cloud infrastructure and application development for EmployeeOS and 2doo, driving deployment scalability and performance optimization.",
@@ -141,7 +141,7 @@ export const experiences = [
   },
   {
     title: "Cloud Engineer Intern",
-    job: "ZeroToCloud (1+ months)",
+    job: "ZeroToCloud - Australia (Remote)",
     date: "Apr 2025 - Present",
     contents: [
       "Designed and developed responsive websites for ZeroToCloud's cloud computing courses, ensuring performance, SEO optimization, and mobile compatibility.",
@@ -153,15 +153,9 @@ export const experiences = [
 ];
 export const reviews = [
   {
-    name: "Abhay Vashistha",
-    username: "Technical Lead, F13 Technologies",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://ca.slack-edge.com/T7BJUG8M8-UT6PQRY21-a3ada83a1198-512",
-  },
-  {
     name: "Tarleen Kaur",
     username: "Human Resource Specialist, F13 Technologies",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    body: "Shreyas brings reliability and sharp problem-solving to every tech challenge. He's an asset to any team he’s part of.",
     img: "https://ca.slack-edge.com/T7BJUG8M8-U02E2EXNHD2-47176f2550c8-512",
   },
   {
@@ -173,19 +167,13 @@ export const reviews = [
   {
     name: "Amanpreet Singh",
     username: "Founder, F13 Technologies",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    body: "Relentlessly dedicated and always just a ping away, Shreyas is the kind of developer intern every startup dreams of - committed, consistent, and clockless.",
     img: "https://ca.slack-edge.com/T7BJUG8M8-U7BJUG8QJ-6f99a4b46f27-512",
   },
   {
-    name: "Snigdha Chaudhary",
-    username: "Technical Curriculum Developer, ZeroToCloud",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://media.licdn.com/dms/image/v2/D4D03AQG0Q8s94pb_zw/profile-displayphoto-shrink_400_400/B4DZQxtRKvG0Ag-/0/1736000738953?e=1753315200&v=beta&t=qQYxZWFfex6iHlGG0fOxNnKYqeqko9rRIt_uUWiU3FM",
-  },
-  {
-    name: "Lucy Wang",
-    username: "Founder, ZeroToCloud",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1753315200&v=beta&t=sqjjqPMgtpLXI6LVXqFeCCq6vf0jTnaejSVzK-7CkkQ",
+    name: "Diya Mangla",
+    username: "HR Associate, F13 Technologies",
+    body: "Shreyas is someone you can always count on to bring ideas to life with clarity and commitment.",
+    img: "https://ca.slack-edge.com/T7BJUG8M8-U086QJ8HF3R-7aa271d8c9c1-512",
   },
 ];
