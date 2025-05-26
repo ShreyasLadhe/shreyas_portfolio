@@ -176,4 +176,10 @@ export const reviews = [
     body: "Shreyas is someone you can always count on to bring ideas to life with clarity and commitment.",
     img: "https://ca.slack-edge.com/T7BJUG8M8-U086QJ8HF3R-7aa271d8c9c1-512",
   },
+  {
+  name: "Lucy Wang",
+  username: "Founder, ZeroToCloud",
+  body: "Shreyas takes full ownership and acts fast — always proactive, always dependable.",
+  img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1753920000&v=beta&t=1q1mV_yE8JYAg9Qxes2vbRg8jzHtN_2rCa4ILidgChQ",
+},
 ];
