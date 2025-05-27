@@ -6,10 +6,14 @@ import Contact from './sections/Contact'
 import Projects from './sections/Projects'
 import Experiences from './sections/Experiences'
 import Testimonial from './sections/Testimonial'
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const App = () => {
   return (
     <div className="container mx-auto max-w-7xl">
+      <Analytics />
+      <SpeedInsights />
       <Navbar />
 
       <section id="home">
