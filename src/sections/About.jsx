@@ -56,6 +56,7 @@ const About = () => {
                 <div className="z-10 w-[50%]">
                     <p className="headtext">Tech Expertise</p>
                     <p className="subtext">I specialize in cloud tools like AWS, GCP, Docker,etc including variety of bleeding edge development tools like NextJs and more to build scalable cloud native applications.</p>
+                    <img className=" mt-3 w-25" src="/assets/logos/ccp.png" alt="ccp logo" />
                 </div>
                 <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
                     <Frameworks />
