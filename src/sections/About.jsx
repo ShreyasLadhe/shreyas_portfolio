@@ -3,6 +3,7 @@ import Card from '../components/Card'
 import { Globe } from '../components/Globe'
 import CopyEmailButton from '../components/CopyEmailButton'
 import { Frameworks } from '../components/Frameworks'
+import RedirectCredlyButton from '../components/RedirectCredlyButton'
 
 const About = () => {
     const grid2Container = useRef()
@@ -50,6 +51,7 @@ const About = () => {
                     <div className="flex flex-col items-center justify-center gap-4 size-full">
                         <p className="text-center headtext">Want to connect and know more about me?</p>
                         <CopyEmailButton />
+                        <RedirectCredlyButton />
                     </div>
                 </div>
                 {/* Grid 5 */}
