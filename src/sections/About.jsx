@@ -50,8 +50,8 @@ const About = () => {
                 <div className="grid-special-color grid-4">
                     <div className="flex flex-col items-center justify-center gap-4 size-full">
                         <p className="text-center headtext">Want to connect and know more about me?</p>
-                        <CopyEmailButton />
                         <RedirectCredlyButton />
+                        <CopyEmailButton />
                     </div>
                 </div>
                 {/* Grid 5 */}
