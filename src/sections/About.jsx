@@ -62,6 +62,8 @@ const About = () => {
                         <div className="flex gap-4">
                             <img className="mt-3 w-25" src="/assets/logos/ccp.png" alt="ccp logo" />
                             <img className="mt-3 w-25" src="/assets/logos/aif.png" alt="aif logo" />
+                            <img className="mt-3 w-25" src="/assets/logos/awsebadge.png" alt="aws badge" />
+
                         </div>
                     </div>
                     <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
