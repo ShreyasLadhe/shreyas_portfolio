@@ -1,13 +1,14 @@
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Navbar from './sections/Navbar'
-import Footer from './sections/Footer'
-import Contact from './sections/Contact'
-import Projects from './sections/Projects'
-import Experiences from './sections/Experiences'
-import Testimonial from './sections/Testimonial'
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { useEffect } from 'react';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Navbar from './sections/Navbar';
+import Footer from './sections/Footer';
+import Contact from './sections/Contact';
+import Projects from './sections/Projects';
+import Experiences from './sections/Experiences';
+import Testimonial from './sections/Testimonial';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const App = () => {
   return (
@@ -42,7 +43,7 @@ const App = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
