@@ -75,6 +75,38 @@ export const myProjects = [
   },
   {
     id: 3,
+    title: "Velvet Pour – A GSAP Scroll Experience",
+    description:
+      "Velvet Pour is a smooth-scroll experience website designed to explore and showcase GSAP animations with aesthetic transitions and interactive UI effects.",
+    subDescription: [
+      "Built with React and styled using modern CSS techniques to support animation fluidity.",
+      "Used GSAP (GreenSock Animation Platform) to create scroll-triggered animations and smooth parallax effects.",
+      "Focused on learning and implementing timeline control, staggered motion, and responsive scroll interactions.",
+      "Deployed on AWS with highly available infrastructure.",
+    ],
+    href: "https://velvet-pour-amber.vercel.app",
+    logo: "/assets/projects/velvetpour-logo.svg", // Replace with your actual logo path or leave empty if none
+    image: "/assets/projects/velvet-pour.png", // Replace with a screenshot of your project
+    tags: [
+      {
+        id: 1,
+        name: "React",
+        path: "/assets/logos/react.svg",
+      },
+      {
+        id: 2,
+        name: "GSAP",
+        path: "/assets/logos/gsap.svg", 
+      },
+      {
+        id: 3,
+        name: "AWS",
+        path: "/assets/logos/aws.svg",
+      },
+    ],
+  },
+  {
+    id: 4,
     title: "Many more coming soon..",
     description:
       "Coming Soon!",
@@ -177,9 +209,9 @@ export const reviews = [
     img: "https://ca.slack-edge.com/T7BJUG8M8-U086QJ8HF3R-7aa271d8c9c1-512",
   },
   {
-  name: "Lucy Wang",
-  username: "Founder, ZeroToCloud",
-  body: "Shreyas takes full ownership and acts fast - always proactive, always dependable.",
-  img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1753920000&v=beta&t=1q1mV_yE8JYAg9Qxes2vbRg8jzHtN_2rCa4ILidgChQ",
-},
+    name: "Lucy Wang",
+    username: "Founder, ZeroToCloud",
+    body: "Shreyas takes full ownership and acts fast - always proactive, always dependable.",
+    img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1753920000&v=beta&t=1q1mV_yE8JYAg9Qxes2vbRg8jzHtN_2rCa4ILidgChQ",
+  },
 ];
