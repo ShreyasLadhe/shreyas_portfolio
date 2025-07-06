@@ -215,3 +215,27 @@ export const reviews = [
     img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1753920000&v=beta&t=1q1mV_yE8JYAg9Qxes2vbRg8jzHtN_2rCa4ILidgChQ",
   },
 ];
+
+export const certifications = [
+  {
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "August 2024",
+    logo: "/assets/logos/ccp.png",
+    link: "https://www.credly.com/badges/3b18d51d-7a27-42ad-a6a3-2be4b5ebfcf2/public_url"
+  },
+  {
+    name: "AWS Certified AI Practitioner",
+    issuer: "Amazon Web Services",
+    date: "June 2025",
+    logo: "/assets/logos/aif.png",
+    link: "https://www.credly.com/badges/a73da11b-9abe-4261-b580-2e15b30b8e96/public_url"
+  },
+  {
+    name: "OCI Foundations Associate",
+    issuer: "Oracle Cloud Infrastructure",
+    date: "July 2025",
+    logo: "/assets/logos/OCIF.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=25572D24DE0D91530D93023573FB13CE2E9B29B4AE8F5E24D81A103CA0421823"
+  }
+];

@@ -4,6 +4,9 @@ import { Globe } from '../components/Globe'
 import CopyEmailButton from '../components/CopyEmailButton'
 import { Frameworks } from '../components/Frameworks'
 import RedirectCredlyButton from '../components/RedirectCredlyButton'
+import { certifications } from '../constants'
+import ConfettiExplosion from 'react-confetti-explosion';
+import { useState } from 'react';
 
 const About = () => {
     const grid2Container = useRef()
@@ -59,18 +62,52 @@ const About = () => {
                     <div className="z-10 w-[50%]">
                         <p className="headtext">Tech Expertise</p>
                         <p className="subtext">I specialize in cloud tools like AWS, GCP, Docker,etc including variety of bleeding edge development tools like NextJs and more to build scalable cloud native applications.</p>
-                        <div className="flex gap-4">
-                            <img className="mt-3 w-25" src="/assets/logos/ccp.png" alt="ccp logo" />
-                            <img className="mt-3 w-25" src="/assets/logos/aif.png" alt="aif logo" />
-                            <img className="mt-3 w-25" src="/assets/logos/awsebadge.png" alt="aws badge" />
-
-                        </div>
                     </div>
                     <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
                         <Frameworks />
                     </div>
                 </div>
             </div>
+            {/* Certifications Block */}
+            <div className="w-full my-8 p-6 rounded-xl bg-gradient-to-r from-indigo via-primary to-storm shadow-lg flex flex-col items-center">
+              <h3 className="text-2xl font-semibold mb-4 text-white">Certifications</h3>
+              <div className="flex flex-wrap justify-center gap-8 w-full">
+                {certifications.map((cert, idx) => {
+                  const [isExploding, setIsExploding] = useState(false);
+                  return (
+                    <div
+                      key={cert.name + idx}
+                      className="relative"
+                      onMouseEnter={() => setIsExploding(true)}
+                      onMouseLeave={() => setIsExploding(false)}
+                    >
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col items-center bg-black/30 rounded-lg p-4 min-w-[180px] max-w-[220px] transition-transform hover:scale-105 hover:bg-black/50 shadow-md"
+                      >
+                        <img src={cert.logo} alt={cert.name + ' logo'} className="w-16 h-16 object-contain mb-2 rounded" />
+                        <span className="font-bold text-lg text-white text-center">{cert.name}</span>
+                        <span className="text-sm text-indigo-200 text-center">{cert.issuer}</span>
+                        <span className="text-xs text-gray-300 mt-1">{cert.date}</span>
+                      </a>
+                      {isExploding && (
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+                          <ConfettiExplosion
+                            particleCount={80}
+                            duration={2200}
+                            width={300}
+                            force={0.6}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            {/* End Certifications Block */}
         </section>
     )
 }
