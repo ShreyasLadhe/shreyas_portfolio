@@ -237,5 +237,12 @@ export const certifications = [
     date: "July 2025",
     logo: "/assets/logos/OCIF.png",
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=25572D24DE0D91530D93023573FB13CE2E9B29B4AE8F5E24D81A103CA0421823"
+  },
+  {
+    name: "OCI Architect Associate",
+    issuer: "Oracle Cloud Infrastructure",
+    date: "July 2025",
+    logo: "/assets/logos/ociaa.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=BA7D0F669BF7D5795678AC9510F69D852234235E7A258D3F2930AE3D8F4BA278"
   }
 ];
