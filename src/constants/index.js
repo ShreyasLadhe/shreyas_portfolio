@@ -239,6 +239,13 @@ export const certifications = [
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=25572D24DE0D91530D93023573FB13CE2E9B29B4AE8F5E24D81A103CA0421823"
   },
   {
+    name: "OCI AI Foundations Associate",
+    issuer: "Oracle Cloud Infrastructure",
+    date: "July 2025",
+    logo: "/assets/logos/ociai.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=6A81FD0E191AB545C167A83B722C93578D3778005355DFDD63FDED5827749493"
+  },
+  {
     name: "OCI Architect Associate",
     issuer: "Oracle Cloud Infrastructure",
     date: "July 2025",
