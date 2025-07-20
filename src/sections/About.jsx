@@ -105,7 +105,7 @@ const About = () => {
                     >
                       <img src={cert.logo} alt={cert.name + ' logo'} className="w-16 h-16 object-contain mb-2 rounded" />
                       <span className="font-bold text-lg text-white text-center">{cert.name}</span>
-                      <span className="text-sm text-[#FF9900] text-center">{cert.issuer}</span>
+                      <span className="text-sm text-[#FF9900] text-center" dangerouslySetInnerHTML={{ __html: cert.issuer }} />
                       <span className="text-xs text-gray-300 mt-1">{cert.date}</span>
                     </a>
                     {isExploding && (
@@ -154,7 +154,7 @@ const About = () => {
                     >
                       <img src={cert.logo} alt={cert.name + ' logo'} className="w-16 h-16 object-contain mb-2 rounded" />
                       <span className="font-bold text-lg text-[#1A2233] text-center">{cert.name}</span>
-                      <span className="text-sm text-[#B22222] text-center">{cert.issuer}</span>
+                      <span className="text-sm text-[#B22222] text-center" dangerouslySetInnerHTML={{ __html: cert.issuer }} />
                       <span className="text-xs text-gray-700 mt-1">{cert.date}</span>
                     </a>
                     {isExploding && (

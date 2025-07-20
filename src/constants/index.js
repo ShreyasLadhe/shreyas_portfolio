@@ -246,6 +246,13 @@ export const certifications = [
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=6A81FD0E191AB545C167A83B722C93578D3778005355DFDD63FDED5827749493"
   },
   {
+    name: "ODP Foundations Associate",
+    issuer: "Oracle Data <br/> Platform",
+    date: "July 2025",
+    logo: "/assets/logos/odpf.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8EF2F8B3241825F8EDACBF03B6C93B80281C91DD7F3321577D68675C84FE3C85"
+  },
+  {
     name: "OCI Architect Associate",
     issuer: "Oracle Cloud Infrastructure",
     date: "July 2025",
