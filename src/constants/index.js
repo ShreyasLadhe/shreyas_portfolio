@@ -199,7 +199,7 @@ export const reviews = [
   {
     name: "Amanpreet Singh",
     username: "Founder, F13 Technologies",
-    body: "Relentlessly dedicated and always just a ping away, Shreyas is the kind of developer intern every startup dreams of - committed, consistent, and clockless.",
+    body: "Relentlessly dedicated and always just a ping away, Shreyas is the kind of intern every startup dreams of - committed, consistent, and clockless.",
     img: "https://ca.slack-edge.com/T7BJUG8M8-U7BJUG8QJ-6f99a4b46f27-512",
   },
   {
@@ -212,7 +212,7 @@ export const reviews = [
     name: "Lucy Wang",
     username: "Founder, ZeroToCloud",
     body: "Shreyas takes full ownership and acts fast - always proactive, always dependable.",
-    img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1753920000&v=beta&t=1q1mV_yE8JYAg9Qxes2vbRg8jzHtN_2rCa4ILidgChQ",
+    img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1757548800&v=beta&t=bUjPPXoMl8y7qAoEizzHPmhUTPHZipCI_XfyMnSQRO0",
   },
 ];
 
