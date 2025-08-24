@@ -232,6 +232,13 @@ export const certifications = [
     link: "https://www.credly.com/badges/a73da11b-9abe-4261-b580-2e15b30b8e96/public_url"
   },
   {
+    name: "AWS Certified Solutions Architect Associate",
+    issuer: "Amazon Web Services",
+    date: "August 2025",
+    logo: "/assets/logos/aws-saa.png",
+    link: "https://www.credly.com/badges/cbf1e721-9875-4411-84db-66365b6e2122/public_url"
+  },
+  {
     name: "OCI Foundations Associate",
     issuer: "Oracle Cloud Infrastructure",
     date: "July 2025",

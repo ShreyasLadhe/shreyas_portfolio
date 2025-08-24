@@ -3,7 +3,8 @@ import Card from '../components/Card'
 import { Globe } from '../components/Globe'
 import CopyEmailButton from '../components/CopyEmailButton'
 import { Frameworks } from '../components/Frameworks'
-import RedirectCredlyButton from '../components/RedirectCredlyButton'
+import RedirectCredlyButtonAWS from '../components/RedirectCredlyButtonAWS'
+import RedirectCredlyButtonGCP from '../components/RedirectCredlyButtonGCP'
 import { certifications } from '../constants'
 import ConfettiExplosion from 'react-confetti-explosion';
 import { useState } from 'react';
@@ -28,6 +29,7 @@ const About = () => {
           <div className="flex items-center justify-center w-full h-full" ref={grid2Container}>
             <p className="flex items-end text-5xl text-gray-500">Cloud Expertise</p>
             <Card style={{ rotate: "12deg", top: "8%", left: "18%" }} img="assets/logos/ccp.png" containerRef={grid2Container} />
+            <Card style={{ rotate: "12deg", top: "12%", left: "8%" }} img="assets/logos/aws-saa.png" containerRef={grid2Container} />
             <Card style={{ rotate: "-18deg", top: "15%", left: "42%" }} img="assets/logos/aif.png" containerRef={grid2Container} />
             <Card style={{ rotate: "30deg", top: "65%", left: "82%" }} img="assets/logos/OCIF.png" containerRef={grid2Container} />
             <Card style={{ rotate: "-22deg", top: "68%", left: "74%" }} img="assets/logos/ociaa.png" containerRef={grid2Container} />
@@ -37,6 +39,7 @@ const About = () => {
             <Card style={{ rotate: "18deg", top: "58%", left: "16%" }} img="assets/logos/git.svg" containerRef={grid2Container} />
             <Card style={{ rotate: "-8deg", top: "73%", left: "56%" }} img="assets/logos/react.svg" containerRef={grid2Container} />
             <Card style={{ rotate: "10deg", top: "12%", left: "68%" }} text="DevOps" containerRef={grid2Container} />
+            <Card style={{ rotate: "20deg", top: "42%", left: "48%" }} text="Solutions Architecture" containerRef={grid2Container} />
             <Card style={{ rotate: "-40deg", top: "50%", left: "6%" }} text="ClickUp" containerRef={grid2Container} />
 
           </div>
@@ -53,10 +56,45 @@ const About = () => {
         </div>
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">Want to connect and know more about me?</p>
-            <RedirectCredlyButton />
-            <CopyEmailButton />
+          <div className="flex flex-col items-center justify-center gap-4 size-full p-4">
+            {/* Main heading with elegant styling */}
+            <div className="text-center space-y-2">
+              <h3 className="text-xl font-bold text-white tracking-wide">
+                Want to connect and know more about me?
+              </h3>
+            </div>
+            
+            {/* Buttons container with better spacing and layout */}
+            <div className="flex flex-col items-center gap-3 w-full max-w-sm">
+              {/* Credly Profile Buttons */}
+              <div className="flex flex-col gap-2 w-full">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                  <RedirectCredlyButtonAWS />
+                </div>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                  <RedirectCredlyButtonGCP />
+                </div>
+              </div>
+              
+              {/* Divider */}
+              <div className="flex items-center w-full my-1">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+                <span className="px-3 text-xs text-gray-400 font-medium">OR</span>
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+              </div>
+              
+              {/* Email Button */}
+              <div className="relative group w-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                <CopyEmailButton />
+              </div>
+            </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute top-3 right-3 w-12 h-12 bg-white/5 rounded-full blur-sm"></div>
+            <div className="absolute bottom-3 left-3 w-10 h-10 bg-white/5 rounded-full blur-sm"></div>
           </div>
         </div>
         {/* Grid 5 */}

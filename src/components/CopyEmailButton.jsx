@@ -16,14 +16,17 @@ const CopyEmailButton = () => {
   return (
     <motion.button
       onClick={copyToClipboard}
-      whileHover={{ y: -5 }}
-      whileTap={{ scale: 1.05 }}
-      className="relative px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden"
+      whileHover={{ y: -3, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="relative w-full px-6 py-3 text-sm font-medium text-white text-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl border border-purple-500/20 hover:border-purple-400/40 cursor-pointer overflow-hidden group"
     >
+      {/* Shimmer effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+      
       <AnimatePresence mode="wait">
         {copied ? (
           <motion.p
-            className="flex items-center justify-center gap-2"
+            className="flex items-center justify-center gap-3 relative z-10"
             key="copied"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +38,7 @@ const CopyEmailButton = () => {
           </motion.p>
         ) : (
           <motion.p
-            className="flex items-center justify-center gap-2"
+            className="flex items-center justify-center gap-3 relative z-10"
             key="copy"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
