@@ -161,27 +161,80 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "AWS Cloud Engineer",
-    job: "F13 Technologies - New Delhi (Remote)",
-    date: "Aug 2024 - Present",
-    contents: [
-      "Led cloud infrastructure and application development for EmployeeOS and 2doo, driving deployment scalability and performance optimization.",
-      "Worked closely on indian government projects in collaboration with multiple Indian ministries, ensuring compliance with national security and data handling standards.",
-      "Spearheaded infrastructure modernization using AWS services, streamlining CI/CD pipelines and reducing deployment times by over 60%.",
-      "Mentored and managed fellow intern teams, conducting project evaluations, knowledge-sharing sessions, and aligning team efforts with sprint goals.",
-    ],
+    company: "ZeroToCloud",
+    location: "Australia",
+    remote: true,
+    logo: "/assets/logos/zerotocloud.jpg",
+    roles: [
+      {
+        title: "Cloud Engineer Intern",
+        date: "Aug 2025 - Present",
+        contents: [
+          "Designed and developed responsive websites for ZeroToCloud's cloud computing courses, ensuring performance, SEO optimization, and mobile compatibility.", 
+          "Architected resilient and highly available architecture solutions that align with AWS Well Architect Framework pillars",
+          "Collaborated closely with the content and design teams to ensure seamless integration of technical content with frontend components."
+        ],
+        skills: ["AWS", "Web Development", "React", "Authentication", "Exam Portals"],
+        isCurrent: true
+      },
+      {
+        title: "Cloud Engineer - Contract",
+        date: "Apr 2025 - Aug 2025",
+        contents: [
+          "Built scalable practice exam portals tailored for AWS certifications, with user authentication, progress tracking, and timed test features.",
+          "Created comprehensive question sets and detailed explanations aligned with AWS exam blueprints.",
+        ],
+        skills: ["AWS", "Web Development", "React", "Authentication", "Exam Portals"],
+        isCurrent: false
+      }
+    ]
   },
   {
-    title: "Cloud Engineer Intern",
-    job: "ZeroToCloud - Australia (Remote)",
-    date: "Apr 2025 - Present",
-    contents: [
-      "Designed and developed responsive websites for ZeroToCloud's cloud computing courses, ensuring performance, SEO optimization, and mobile compatibility.",
-      "Built scalable practice exam portals tailored for AWS certifications, with user authentication, progress tracking, and timed test features.",
-      "Created comprehensive question sets and detailed explanations aligned with AWS Cloud Practitioner exam blueprints.",
-      "Collaborated closely with the content and design teams to ensure seamless integration of technical content with frontend components.",
-    ],
+    company: "F13 Technologies",
+    location: "New Delhi, India",
+    remote: true,
+    logo: "/assets/logos/f13.png",
+    roles: [
+      {
+        title: "AWS Cloud Engineer",
+        date: "Jan 2025 - Aug 2025",
+        contents: [
+          "Led cloud infrastructure and application development for EmployeeOS and 2doo, driving deployment scalability and performance optimization.",
+          "Spearheaded infrastructure modernization using AWS services, streamlining CI/CD pipelines and reducing deployment times by over 60%.",
+        ],
+        skills: ["AWS", "CI/CD", "NextJS", "Docker", "Team Management"],
+        isCurrent: false
+      },
+      {
+        title: "Cloud Engineer Intern",
+        date: "Aug 2024 - Dec 2024",
+        contents: [
+          "Mentored and managed fellow intern teams, conducting project evaluations, knowledge-sharing sessions, and aligning team efforts with sprint goals.",
+        ],
+        skills: ["AWS", "Databases", "Python", "Git", "GitHub"],
+        isCurrent: false
+      }
+    ]
   },
+  {
+    company: "Microsoft Learn Student Ambassador",
+    location: "IIITV Chapter",
+    remote: false,
+    logo: "/assets/logos/microsoft.svg",
+    roles: [
+      {
+        title: "Technical Core Member",
+        date: "Sep 2024 - Present",
+        contents: [
+          "Organized technical workshops and hackathons for university students.",
+          "Mentored peers in cloud computing and development technologies.",
+          "Collaborated with Microsoft to promote learning initiatives on campus.",
+        ],
+        skills: ["Microsoft Azure", "Workshop Organization", "Student Mentoring", "Event Management"],
+        isCurrent: true
+      }
+    ]
+  }
 ];
 export const reviews = [
   {
