@@ -7,31 +7,42 @@ export const Timeline = ({ data }) => {
   const [height, setHeight] = useState(0);
   const [expandedCompany, setExpandedCompany] = useState(null);
 
-  // Function to calculate duration from date strings
-  const calculateDuration = (dateString) => {
-    const now = new Date();
-    let endDate;
-    
-    if (dateString.includes('Present')) {
-      endDate = now;
-    } else {
-      // Parse the end date (assuming format like "Aug 2025")
-      const endDateStr = dateString.split(' - ')[1];
-      endDate = new Date(endDateStr);
+  // --- Cross-browser safe date parser ---
+  const parseDate = (str) => {
+    if (!str || str.trim() === "" || str === "Present") return new Date();
+
+    const [monthStr, yearStr] = str.split(" ");
+    const months = {
+      Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+      Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+    };
+
+    const month = months[monthStr];
+    const year = parseInt(yearStr);
+
+    if (isNaN(month) || isNaN(year)) {
+      console.warn("Invalid date string:", str);
+      return new Date(); // fallback
     }
-    
-    // Parse the start date
-    const startDateStr = dateString.split(' - ')[0];
-    const startDate = new Date(startDateStr);
-    
-    // Calculate difference in months and add 1 to include the starting month
-    const monthsDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 + 
-                      (endDate.getMonth() - startDate.getMonth()) + 1;
-    
-    // Convert to years and months
+
+    return new Date(year, month, 1);
+  };
+
+  // --- Duration calculator ---
+  const calculateDuration = (dateString) => {
+    const [startStr, endStr] = dateString.split(" - ");
+    const startDate = parseDate(startStr);
+    const endDate = parseDate(endStr);
+
+    const monthsDiff =
+      (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+      (endDate.getMonth() - startDate.getMonth()) + 1;
+
+    if (monthsDiff <= 0) return "0 mos"; // guard
+
     const years = Math.floor(monthsDiff / 12);
     const months = monthsDiff % 12;
-    
+
     if (years > 0 && months > 0) {
       return `${years} yr ${months} mos`;
     } else if (years > 0) {
@@ -46,7 +57,6 @@ export const Timeline = ({ data }) => {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-    // Recalculate height when sections expand/collapse
   }, [ref, expandedCompany]);
 
   const { scrollYProgress } = useScroll({
