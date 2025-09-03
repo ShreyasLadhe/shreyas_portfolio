@@ -7,6 +7,7 @@ import Contact from './sections/Contact';
 import Projects from './sections/Projects';
 import Experiences from './sections/Experiences';
 import Testimonial from './sections/Testimonial';
+import Solutions from './sections/Solutions';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -31,6 +32,10 @@ const App = () => {
 
       <section id="experiences">
         <Experiences />
+      </section>
+
+      <section id="solutions">
+        <Solutions />
       </section>
 
       <section id="testimonial">

@@ -320,3 +320,138 @@ export const certifications = [
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=BA7D0F669BF7D5795678AC9510F69D852234235E7A258D3F2930AE3D8F4BA278"
   }
 ];
+
+// Solutions Architect content (cards + blog content)
+export const solutionsProjects = [
+  {
+    slug: "from-exposed-to-exemplary",
+    title: "From Exposed to Exemplary: A Startup's Journey to a Secure AWS Cloud ☁️",
+    subtitle: "A Practical Guide to Hardening Cloud Architectures on AWS",
+    image: "/assets/projects/secure-cart/security-pillar.png",
+    cover: "/assets/projects/secure-cart/security-pillar.png",
+    content: [
+      {
+        heading: "Overview",
+        body: [
+          "In the fast-paced world of tech startups, speed is often the top priority. Features are rolled out, customer bases grow, and infrastructure is spun up with a **'get it working now'** mentality. But what happens when the dust settles and you realize your rapid growth has been built on a foundation of critical security vulnerabilities?",
+          "This was the exact predicament of **SecureCart**, a booming e-commerce platform that, in its rush to market, left its most valuable resources exposed to the public internet. With over 10,000 customers, their success was also their biggest liability. This is their story, a journey from a high-risk setup to a production-grade, secure cloud environment, offering a powerful lesson for any organization on AWS."
+        ]
+      },
+      {
+        heading: "The Wrong Way: A Ticking Time Bomb 💣",
+        body: [
+          "SecureCart's initial architecture was a perfect storm of common cloud security mistakes. To get their application running quickly, they deployed everything into a default public environment.",
+          "Here’s a look at the vulnerabilities they were dealing with:",
+          "> - **Publicly Exposed Servers:** Their main application server, an **EC2 instance**, was sitting in a public subnet with its SSH port (22) and HTTP port (80) open to the entire world (0.0.0.0/0). This is the digital equivalent of leaving your office front door unlocked and advertising its location online.  It invited anyone on the internet to attempt to gain access.",
+          { image: "/assets/projects/secure-cart/insecure_ec2.png", alt: "Example: EC2 in public subnet with open ports"},
+          "> - **Internet-Facing Database:** In one of the most dangerous misconfigurations possible, their RDS MySQL database was also publicly accessible. This setup, often done for **quick access** during development, exposed sensitive customer data directly to potential attackers, with only a simple password standing in the way.",
+          { image: "/assets/projects/secure-cart/insecure_rds.png", alt: "Example: RDS MySQL database in public subnet"},
+          "> - **Open File Storage:** Product images and other assets were stored in a public S3 bucket. A misconfigured bucket policy allowed any user, even unauthenticated ones, to read every object in the bucket. This kind of oversight has been the cause of massive data breaches at major companies.",
+          { image: "/assets/projects/secure-cart/insecure_s3.png", alt: "Example: Public S3 bucket"},
+          "This setup was a disaster waiting to happen, plagued by a lack of network segmentation, poor data protection, and nonexistent access control. **A complete redesign was not just necessary; it was urgent**."
+        ]
+      },
+      {
+        heading: "The Solution Architect's Approach: Designing for Defense-in-Depth 🛡️",
+        body: [
+          "Taking on the role of a cloud security-focused Solutions Architect, the mission was clear: transform the vulnerable environment into a secure, production-ready architecture using AWS-native tools and best practices. The new design would be guided by the principle of **layered security (defense-in-depth)**, ensuring that if one layer fails, others are there to protect the application.",
+          "💡The secure architecture would be built around a custom Virtual Private Cloud (VPC).",
+          "Here are the core AWS services used and the reasoning behind their implementation:",
+          "> **Amazon VPC (Virtual Private Cloud)**",
+          { image: "/assets/projects/secure-cart/aws_vpc.jpg", alt: "AWS VPC"},
+          "This is the foundation of the secure network. Instead of using the default VPC, a custom VPC was created to provide complete control over the network environment. It was segmented into:",
+          ">> - **Public Subnets:** These subnets are for resources that *must* be internet-facing, like the load balancer. They have a route to an **Internet Gateway**, which allows two-way communication with the internet.",
+          ">> - **Private Subnets:** These are for backend resources like the application server and database. They have no direct route to the internet, isolating them from public traffic and significantly reducing the attack surface.",
+          "> **Application Load Balancer**",
+          { image: "/assets/projects/secure-cart/aws_elb.jpg", alt: "Application Load Balancer"},
+          "Placed in the public subnet, the ALB acts as the secure front door to the application. It accepts incoming public traffic and forwards it to the private EC2 instance. This is the only component directly exposed to the internet, minimizing risk.",
+          "> **Amazon EC2**",
+          { image: "/assets/projects/secure-cart/aws_ec2.jpg", alt: "Amazon EC2"},
+          "The application server was moved into a private subnet. This crucial step means it no longer has a public IP address and cannot be accessed directly from the internet, protecting it from common attacks.",
+          "> **NAT Gateway**",
+          { image: "/assets/projects/secure-cart/aws_nat.png", alt: "NAT Gateway"},
+          "So, if the EC2 instance is private, how does it get software updates? The NAT Gateway, placed in a public subnet, provides the answer. It allows instances in private subnets to initiate outbound traffic to the internet (for updates, patches, etc.) but blocks any inbound traffic from being initiated from the internet.",
+          "> **Amazon RDS**",
+          { image: "/assets/projects/secure-cart/aws_rds.jpg", alt: "Amazon RDS"},
+          "The database was launched in the private subnet, making it completely inaccessible from the public internet. Access is restricted via security groups so that only the EC2 application server can communicate with it, enforcing the principle of least privilege.",
+          "> **Amazon S3**",
+          { image: "/assets/projects/secure-cart/aws_s3.jpg", alt: "Amazon S3"},
+          "The new S3 bucket was configured to block all public access and enable server-side encryption by default. This ensures that all data is encrypted at rest and cannot be accidentally exposed.",
+          "> **AWS WAF**",
+          { image: "/assets/projects/secure-cart/aws_waf.jpg", alt: "AWS WAF"},
+          "As an additional layer of defense, WAF was integrated with the ALB. It acts as a shield, filtering traffic for common web exploits like SQL injection and cross-site scripting (XSS) before they can even reach the application.",
+          "> **Bastion Host**",
+          { image: "/assets/projects/secure-cart/aws_bastion.webp", alt: "Bastion Host"},
+          "To perform administrative tasks on the private EC2 instance, a Bastion Host (or jump server) was set up in the public subnet. Engineers can securely SSH into the Bastion Host, and from there, 'jump' to the private EC2 instance. This provides secure, controlled administrative access without exposing the app server.",
+          { image: "/assets/projects/secure-cart/secure-cart.png", alt: "securecart-architecture"},
+        ]
+      },
+      {
+        heading: "In the Trenches: Overcoming Real-World Challenges 🛠️",
+        body: [
+          "The journey from an insecure to a secure architecture is a masterclass in precision. Even with a solid blueprint, implementation comes with its own set of practical hurdles. Overcoming them provides some of the most valuable lessons.",
+          "**The Security Group Catch-22**",
+          "**The Issue:** A key step was restricting SSH access to the private application server, allowing it only from the Bastion Host. The plan was to add an inbound rule to the app's security group (`app-sg`) that referenced the Bastion's security group (`bastion-sg`). However, AWS returned a referencing error.",
+          "**The Lesson:** The problem was the pre-existing, insecure rule that allowed SSH from anywhere (0.0.0.0/0). You cannot have a broad rule and a specific, referenced rule for the same port simultaneously in this manner. The fix required a disciplined sequence: first, **delete the insecure 0.0.0.0/0 rule**, save the changes (briefly leaving the instance with no SSH access path), and then add the new, secure rule referencing `bastion-sg`. This reinforces that secure network changes must be deliberate and sequential.",
+          "**The Command Not Found Mystery**",
+          "**The Issue:** After connecting to the private EC2 instance via the Bastion Host, it was time to start the Node.js application using `sudo`. Despite following the guide, a `command not found` error appeared, even though Node.js was clearly installed.",
+          "**The Lesson:** The devil is in the details. The installation script for Node Version Manager (NVM) adds its path to the user's environment, but not necessarily to the root user's environment that `sudo` uses. The fix was to use the full, exact path returned by the `which node` command (`/home/ec2-user/.nvm/versions/node/v18.20.8/bin/node`). It's a classic reminder to always substitute placeholders with actual values from your specific environment.",
+          "**The 503 Error and the Silent Health Check**",
+          "**The Issue:** The Application Load Balancer (ALB) was `active`, the EC2 instance was running, and the app was started. Yet, accessing the ALB's DNS name resulted in a 503 Service Unavailable error. The app was working, but the outside world couldn't reach it.",
+          "**The Lesson:** The culprit was the ALB's health checks. The ALB continuously pings the application to ensure it's healthy before sending traffic. This health check traffic was being blocked by the EC2 instance's own security group. The fix was to go back to the `app-sg` security group and add an inbound rule allowing HTTP traffic on port 80, with the source set to the ALB's security group (`alb-sg`). This ensures that only the load balancer can communicate with the application, a core tenet of this secure design.",
+          "**The Private Key Permission Puzzle**",
+          "**The Issue:** To connect from the Bastion Host to the private EC2 instance, the `.pem` private key file is needed. After successfully copying the key to the Bastion, attempting to use it for SSH resulted in a **permissions too open** error.",
+          "**The Lesson:** This is not a bug, but a critical security feature of SSH. A private key must be private. If its file permissions allow other users on the system to read it, SSH assumes it may have been compromised and refuses to use it. The solution is to strictly lock down the file's permissions with the command `chmod 400 ssh-key.pem` on the Bastion Host, which grants read access only to the file's owner.",
+        ]
+      },
+      {
+        heading: "The Payoff: A Secure and Resilient Foundation ✅",
+        body: [
+          "By the end of the undertaking, SecureCart was transformed from a vulnerable application into a production-grade, secure cloud environment. This wasn't just about patching a few holes; it was about designing a secure foundation from the ground up.",
+          "The key achievements and learnings from this journey include:",
+          "> **True Network Isolation:** Backend resources are now in private subnets with no direct internet access, drastically reducing the attack surface.",
+          "> **Enforced Least Privilege:** Security groups were meticulously configured to only allow necessary communication between components (e.g., only the ALB can talk to the EC2 app, and only the EC2 app can talk to the RDS database).",
+          "> **Defense-in-Depth in Action:** With a WAF filtering malicious requests, an ALB as the single entry point, and isolated private resources, multiple layers of security are now in place.",
+          "> **Data Protection by Default:** All data is now encrypted, both in transit (via HTTPS, handled by ALB) and at rest (in RDS and S3).",
+          "This demonstrates that cloud security is not an afterthought it's an architectural principle. By moving from a flat, public network to a segmented, multi-layered VPC, SecureCart not only mitigated its immediate risks but also built a scalable and resilient foundation for future growth.",
+        ]
+      },
+      {
+        heading: "Resilient for the Future: How to Make Good Architecture Great 🚀",
+        body: [
+          "The new SecureCart architecture is secure and follows best practices, but a great design is never truly finished. It evolves. Here are the next steps to enhance resilience, automation, and observability, turning a secure setup into a world-class one.",
+          "**Introduce High Availability with Auto Scaling**",
+          "The current design places the application server in a single Availability Zone (AZ). To protect against an AZ failure, the next step is to use an **EC2 Auto Scaling group**. By configuring a launch template and spanning the Auto Scaling group across the private subnets in both Availability Zones, the system can automatically handle instance failure and scale in or out based on traffic, ensuring high availability and elasticity.",
+          "**Codify Everything with Infrastructure as Code (IaC)**",
+          "The entire setup was built manually in the AWS Console. This `click-ops` approach is prone to human error and difficult to replicate consistently. The professional standard is to define the infrastructure as code using a tool like **AWS CloudFormation** or **Terraform**. This allows the entire VPC, subnets, gateways, ALB, and security group configuration to be deployed, updated, and destroyed in an automated and repeatable way.",
+          "**Implement Robust Monitoring and Secrets Management**",
+          "While the initial insecure setup lacked any monitoring, the new architecture can be greatly enhanced with it.",
+          "**Observability**",
+          "Integrate **Amazon CloudWatch** to collect logs and metrics. Set up alarms for events like high CPU utilization on EC2 or increased latency on the ALB. Enable VPC Flow Logs to monitor all network traffic for security analysis.",
+          "**Secrets**",
+          "Instead of manually handling the database password, it should be stored in **AWS Secrets Manager**. The EC2 instance can then be granted a secure IAM role to retrieve the credential at runtime, eliminating hardcoded secrets from the application code entirely.",
+          "**Automate Deployments with a CI/CD Pipeline**",
+          "The current application deployment is a manual process of SSHing into a server . This is slow and risky. A modern approach is to build a CI/CD (Continuous Integration/Continuous Deployment) pipeline using services like **AWS CodePipeline**, **AWS CodeBuild**, and **AWS CodeDeploy**. This pipeline can automatically fetch code from a repository, build it, run tests, and safely deploy it to the EC2 instances in the Auto Scaling group, enabling faster, more reliable updates.",
+        ]
+      },
+      {
+        heading: "From Liability to Asset",
+        body: [
+          "The story of SecureCart is more than just a technical exercise; it's a critical lesson in digital maturity for the modern age. By systematically dismantling their insecure infrastructure and rebuilding it with a security-first mindset, they transformed their greatest liability into a competitive advantage.",
+          "They learned that true cloud security isn't about a single tool or a magic bullet. It's about implementing layers of defense that work in concert. This journey involved:",
+          "> - Establishing a secure network foundation with a custom VPC, complete with public and private subnets for strict isolation.",
+          "> - Placing the Application Load Balancer as the single, hardened entry point for all traffic, minimizing the public attack surface.",
+          "> - Shielding the core application server (EC2) and database (RDS) in private subnets, making them inaccessible from the open internet.",
+          "> - Enforcing the principle of least privilege using granular Security Groups and IAM roles.",
+          "> - Deploying AWS WAF to proactively block common web-based attacks like SQL injection before they could ever reach the application.",
+          "The initial **move fast and break things** approach built a ticking time bomb. The methodical, architectural redesign not only defused it but replaced it with a resilient, production-ready system prepared for future growth and scale.",
+          "For any organization building on the cloud, SecureCart's journey serves as a clear and powerful reminder: don't wait for a security incident to force your hand. Design with security in mind from day one, and transform your cloud infrastructure from a potential risk into your strongest asset."
+        ]
+      }
+    ],
+    links: [
+      { label: "Full Project with detailed steps", href: "https://www.zerotocloud.co/course/5-aws-cloud-projects-to-become-a-solutions-architect" },
+      { label: "AWS Documentation", href: "https://docs.aws.amazon.com" }
+    ]
+  },
+];
