@@ -211,6 +211,58 @@ const About = () => {
             </div>
           </div>
         </div>
+        
+        {/* Others Section - Full Width Row */}
+        <div className="w-full mt-8">
+          <div className="rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#6B46C1]/20 relative overflow-hidden"
+               style={{
+                 background: 'linear-gradient(135deg, rgba(58,43,95,0.85) 0%, rgba(75,35,75,0.85) 60%, rgba(95,43,95,0.85) 100%)',
+                 backdropFilter: 'blur(12px)',
+                 WebkitBackdropFilter: 'blur(12px)',
+                 boxShadow: '0 4px 32px 0 rgba(75,35,75,0.18), 0 0 0 1.5px #6B46C155 inset',
+               }}>
+            {/* Animated stars overlay */}
+            <div className="pointer-events-none absolute inset-0 z-0" style={{background: 'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.07) 0, transparent 60%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0, transparent 70%)'}} />
+            <div className="flex items-center gap-2 mb-6 z-10">
+              <span className="text-2xl font-semibold text-[#6B46C1] tracking-wide font-sans" style={{textShadow: '0 2px 8px #4B234B88, 0 1px 0 #fff2'}}>Others</span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 w-full">
+              {certifications.filter(cert => !cert.issuer.toLowerCase().includes('amazon') && !cert.issuer.toLowerCase().includes('oracle')).map((cert, idx) => {
+                const [isExploding, setIsExploding] = useState(false);
+                return (
+                  <div
+                    key={cert.name + idx}
+                    className="relative"
+                    onMouseEnter={() => setIsExploding(true)}
+                    onMouseLeave={() => setIsExploding(false)}
+                  >
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center bg-gradient-to-br from-[#F8F6F0]/80 to-[#C7B299]/80 rounded-xl p-5 min-w-[180px] max-w-[220px] transition-transform hover:scale-105 hover:shadow-2xl border border-[#6B46C1]/20"
+                    >
+                      <img src={cert.logo} alt={cert.name + ' logo'} className="w-16 h-16 object-contain mb-2 rounded" />
+                      <span className="font-bold text-lg text-[#1A2233] text-center">{cert.name}</span>
+                      <span className="text-sm text-[#6B46C1] text-center" dangerouslySetInnerHTML={{ __html: cert.issuer }} />
+                      <span className="text-xs text-gray-700 mt-1">{cert.date}</span>
+                    </a>
+                    {isExploding && (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+                        <ConfettiExplosion
+                          particleCount={80}
+                          duration={2200}
+                          width={300}
+                          force={0.6}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
       {/* End Certifications Block */}
     </section>

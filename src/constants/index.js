@@ -318,6 +318,13 @@ export const certifications = [
     date: "July 2025",
     logo: "/assets/logos/ociaa.png",
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=BA7D0F669BF7D5795678AC9510F69D852234235E7A258D3F2930AE3D8F4BA278"
+  },
+  {
+    name: "Aviatrix MultiCloud Network Associate",
+    issuer: "Aviatrix",
+    date: "September 2025",
+    logo: "/assets/logos/aviatrix-associate.png",
+    link: "https://www.credly.com/badges/bc359949-6fd2-461f-b640-8ff075663f5b/public_url"
   }
 ];
 
