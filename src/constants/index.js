@@ -307,7 +307,7 @@ export const certifications = [
   },
   {
     name: "ODP Foundations Associate",
-    issuer: "Oracle Data <br/> Platform",
+    issuer: "Oracle Data Platform",
     date: "July 2025",
     logo: "/assets/logos/odpf.png",
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8EF2F8B3241825F8EDACBF03B6C93B80281C91DD7F3321577D68675C84FE3C85"
@@ -332,7 +332,7 @@ export const certifications = [
 export const solutionsProjects = [
   {
     slug: "from-exposed-to-exemplary",
-    title: "From Exposed to Exemplary: A Startup's Journey to a Secure AWS Cloud ☁️",
+    title: "From Exposed to Exemplary: Startup's Journey to a Secure AWS Cloud ☁️",
     subtitle: "A Practical Guide to Hardening Cloud Architectures on AWS",
     image: "/assets/projects/secure-cart/security-pillar.png",
     cover: "/assets/projects/secure-cart/security-pillar.png",
@@ -461,4 +461,84 @@ export const solutionsProjects = [
       { label: "AWS Documentation", href: "https://docs.aws.amazon.com" }
     ]
   },
+  {
+    slug: "The Midnight Scramble",
+    title: "The Midnight Scramble: A DevOps Tale of Woe and Wisdom",
+    subtitle: "Practical Strategies for Resilient, Automated Cloud Operations",
+    image: "/assets/projects/chatops/operational-excellence_pillar.png",
+    cover: "/assets/projects/chatops/operational-excellence_pillar.png",
+
+    content: [
+      {
+        heading: "Overview",
+        body: [
+          "Imagine this: it's 3 AM, and a critical service goes down. Your on-call engineer, jolted awake by a notification, begins the frantic dance of diagnostics. They're jumping between the AWS Console, CloudWatch dashboards, and application logs, all while the pressure mounts. Every minute spent navigating different interfaces is a minute of downtime, a minute of customer frustration, and a minute closer to a major incident. This **chaotic, reactive approach is all too common**, and it’s a clear sign that it’s time for a better way.",
+          "This scenario highlights a fundamental challenge in modern operations: the disconnect between alerts and actions. The traditional method is slow, inefficient, and ripe for human error. What if there was a way to bring the entire incident response workflow into the one place your team already collaborates?",
+          "This is where **ChatOps** comes in a model that integrates your development and operations tools directly into your chat platform. By leveraging the power of chat, teams can receive real-time alerts, diagnose issues, and trigger automated fixes, all without ever leaving their chat client."
+        ]
+      },
+      {
+        heading: "The Solution Architect's Approach: Building the ChatOpsBot",
+        body: [
+          "As a Solutions Architect focused on operational excellence, my goal was to design a system that not only alerts the team but empowers them to respond instantly and securely. The solution, **ChatOpsBot**, is a lightweight DevOps assistant that brings AWS operations directly into Slack.",
+          { image: "/assets/projects/chatops/cloudwatch_trigger_slack.png", alt: "ChatOps Demo"},
+          { image: "/assets/projects/chatops/lambda_slack.png", alt: "ChatOps Demo2"},
+          "The core principle is to create a seamless flow from alert to resolution. Instead of just notifying the team of a problem, we provide them with the tools to fix it right from their chat window.", 
+          "This approach aligns perfectly with the **Operational Excellence Pillar** of the AWS Well-Architected Framework, which emphasizes automating and improving response to operational events.",
+          "The implementation of **ChatOpsBot** revolves around a suite of powerful AWS services, each playing a crucial role in creating a robust and automated workflow."
+        ]
+      },
+      {
+        heading: "The Architecture and Services: A Symphony of Automation",
+        body: [
+          { image: "/assets/projects/chatops/chatops.png", alt: "ChatOps Architecture Diagram" },
+          "At the heart of our ChatOps solution is a carefully orchestrated set of AWS services working in harmony. Here’s a breakdown of each component and why it was chosen:",
+          "**AWS Chatbot**",
+          { image: "/assets/projects/chatops/slack_connection.png", alt: "Slack Connection" },
+          "This is the linchpin of our entire system. AWS Chatbot acts as the **bridge between Slack and our AWS environment**, allowing us to receive notifications and execute commands from within our chat channels. It’s the foundational piece that makes real-time, chat-based operations possible.",
+          "**AWS CloudWatch**",
+          { image: "/assets/projects/chatops/cloudwatch_config.png", alt: "CloudWatch Configuration" },
+          "You can't fix what you can't see. CloudWatch serves as our vigilant eyes on the infrastructure, constantly monitoring **key metrics like CPU utilization**. When a metric crosses a defined threshold, CloudWatch triggers an alarm, kicking off our automated workflow.",
+          "**Amazon SNS**",
+          { image: "/assets/projects/chatops/sns_topic_sub.png", alt: "SNS Connection" },
+          "SNS is the **messaging backbone** of our architecture. When a CloudWatch alarm is triggered, it publishes a message to an SNS topic. This topic then fans out the notification to all subscribed endpoints, in our case, AWS Chatbot. This decoupled approach ensures that we can easily add more notification channels in the future without reconfiguring our alarms.",
+          "**AWS Lambda**",
+          { image: "/assets/projects/chatops/lambda.png", alt: "Lambda" },
+          "This is where the **magic of automation** happens. Lambda functions are our go-to for defining custom, on-demand actions. Whether it's restarting a service, fetching logs, or scaling a resource, we can encapsulate that logic into a **Lambda function that can be invoked directly from Slack**. This empowers the team with one-click fixes for common problems.",
+          "**AWS Identity and Access Management (IAM)**",
+          "Security is paramount. IAM allows us to define granular permissions, ensuring that only authorized users can execute specific commands from Slack. We can create roles that **grant read-only access for general queries and more privileged access for remedial actions**, providing a secure and auditable operational environment.",
+          { image: "/assets/projects/chatops/cloudformation_stack.png", alt: "IAM Configuration" },
+          { image: "/assets/projects/chatops/dashboard_hosted.png", alt: "ChatOps Dashboard" },
+          "To provide a high-level overview of our system's health, we deployed a read-only dashboard. **CloudFormation was used to define our infrastructure as code**, ensuring a consistent and repeatable deployment of an S3 bucket to host our static website and a CloudFront distribution to serve it securely and efficiently across the globe.",
+        ]
+      },
+      {
+        heading: "Challenges and Learnings: The Road to Operational Zen",
+        body: [
+          "The path to building any new system is rarely a straight line, and the development of ChatOpsBot was no exception. Here are some of the hurdles we encountered and the valuable lessons we learned along the way:",
+          "> **IAM Permissions Puzzle:** One of the most significant challenges was getting the IAM permissions just right. It’s a delicate balance between granting enough access for the bot to be useful and maintaining a secure posture. Initially, we faced **access denied** errors when trying to invoke Lambda functions from Slack.",
+          ">> - **Resolution:** We had to meticulously trace the execution path and ensure that the `awschatbot-role` had the necessary policies attached to it, specifically the `lambda:InvokeFunction` permission for the target functions.",
+          ">> - **Learning:** Start with the least privilege and incrementally add permissions as needed. This approach, while sometimes tedious, is crucial for building a secure and resilient system.",
+          "> **Asynchronous Head-Scratchers:** The asynchronous nature of the alarm-to-notification flow can be tricky to debug. There was a point where our CloudWatch alarm was firing, but the notification wasn't appearing in Slack.",
+          ">> - **Resolution:** We found it incredibly helpful to add an email subscription to our SNS topic for testing purposes. This allowed us to confirm that the SNS topic was indeed receiving the message from CloudWatch, isolating the issue to the connection between SNS and AWS Chatbot.",
+          ">> - **Learning:** When dealing with event-driven architectures, it's essential to have visibility into each step of the process. Temporary, parallel notification channels can be a lifesaver during debugging.",
+          "> **The 'It Works on My Machine' Dashboard:** After deploying the frontend dashboard with CloudFormation, we initially encountered 403 Forbidden errors when trying to access the site via the CloudFront URL.",
+          ">> - **Resolution:** The issue was with the S3 bucket policy. We needed to ensure that the policy explicitly granted `s3:GetObject` permissions to the CloudFront distribution's Origin Access Control (OAC).",
+          ">> - **Learning:** Infrastructure as Code is powerful, but it requires a deep understanding of the underlying services. A single misconfiguration in a CloudFormation template can lead to hours of troubleshooting.",
+        ]
+      },
+      {
+        heading: "Building for a Resilient Future: What's Next for ChatOpsBot?",
+        body: [
+          "A core principle of the Operational Excellence pillar is the **continuous evolution of operational practices**. ChatOpsBot, in its current form, is a massive leap forward, but there's always room for improvement. Here are some ways we can enhance the architecture to make it even more resilient and capable:",
+          "> **Interactive Buttons and Modals:** Instead of relying solely on CLI-style commands, we can leverage Slack's interactive components. Imagine an alert for a high CPU that comes with **View Logs**, **Restart Service** and **Acknowledge** buttons. This would lower the barrier to entry for less technical team members and reduce the chance of typos in commands.",
+          "> **Integration with AWS Systems Manager (SSM):** For more complex or sensitive operations, we can use AWS Systems Manager documents instead of Lambda functions. SSM documents can provide a more structured and secure way to perform tasks like patching instances or running detailed diagnostic scripts.",
+          "> **Enhanced Frontend Dashboard:** The current dashboard is read-only. We could evolve it into a fully interactive operational console by integrating it with Amazon API Gateway and Lambda. This would allow users to trigger actions from the dashboard itself, providing a single pane of glass for both monitoring and remediation.",
+          "> **Tiered Alerting and Escalation Policies**: Not all alerts are created equal. We can implement more sophisticated alerting logic using multiple SNS topics for different severity levels (e.g., `critical-alerts`, `warning-alerts`). This would allow us to set different notification preferences and even integrate with on-call management tools like PagerDuty for critical issues.",
+          "> **AI-Powered Insights:** The integration of Amazon Q Developer opens up exciting possibilities for AI-powered assistance. We can train it to recognize patterns in alerts and suggest probable causes or even recommend specific remediation actions based on historical data.",
+          "By embracing a culture of continuous improvement and leveraging the full power of the AWS ecosystem, we can transform our operational capabilities from **reactive firefighting to proactive, intelligent**, and ultimately, a more peaceful night's sleep for our on-call engineers.",
+        ]
+      }
+    ]
+  }
 ];
