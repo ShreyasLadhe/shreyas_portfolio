@@ -265,7 +265,7 @@ export const reviews = [
     name: "Lucy Wang",
     username: "Founder, ZeroToCloud",
     body: "Shreyas takes full ownership and acts fast - always proactive, always dependable.",
-    img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1757548800&v=beta&t=bUjPPXoMl8y7qAoEizzHPmhUTPHZipCI_XfyMnSQRO0",
+    img: "https://media.licdn.com/dms/image/v2/C5603AQGKRbvieGxz1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1629022924164?e=1761177600&v=beta&t=tZS3sUQDRt6Uc45QBT50a51kHs7rCYg-LUQrY0If4fc",
   },
 ];
 
