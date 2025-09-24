@@ -8,6 +8,7 @@ import Projects from './sections/Projects';
 import Experiences from './sections/Experiences';
 import Testimonial from './sections/Testimonial';
 import Solutions from './sections/Solutions';
+import CloudContributions from './sections/CloudContributions';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -40,6 +41,10 @@ const App = () => {
 
       <section id="testimonial">
         <Testimonial />
+      </section>
+
+      <section id="cloud-contributions">
+        <CloudContributions />
       </section>
 
       <section id="contact">

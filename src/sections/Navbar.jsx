@@ -14,6 +14,9 @@ function Navigation() {
                 <a href="#experiences" className="nav-link">Experiences</a>
             </li>
             <li className="nav-li">
+                <a href="#cloud-contributions" className="nav-link">Cloud contributions</a>
+            </li>
+            <li className="nav-li">
                 <a href="#contact" className="nav-link">Contact</a>
             </li>
         </ul>
