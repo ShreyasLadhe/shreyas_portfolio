@@ -7,12 +7,12 @@ const items = [
     cover: '/covers/docker-theory-handbook-cover.png',
     file: '/docs/Docker_Handbook-Shreyas Ladhe.pdf'
   },
-  // {
-  //   id: 'doc-2',
-  //   title: 'Docker Intervew Handbook',
-  //   cover: '/covers/docker-interview-cover.png',
-  //   file: '/docs/Docker_Interview_Handbook-ShreyasLadhe.pdf'
-  // },
+  {
+    id: 'doc-2',
+    title: 'Docker Intervew Handbook',
+    cover: '/covers/docker-interview-cover.png',
+    file: '/docs/Docker_Interview_Handbook-ShreyasLadhe.pdf'
+  },
   {
     id: 'doc-3',
     title: 'Your Go-To Guides',
@@ -34,17 +34,17 @@ const getIndexForItem = (item) => {
         { title: 'Publishing and Pulling Images using Docker Registery' },
         { title: 'Orchestrating containers using Docker Swarm and Kubernetes' },
       ];
-    // case 'doc-2':
-    //   return [
-    //     { title: 'INTERVIEW QUESTIONS: Install and Configure Docker on Your Local Machine' },
-    //     { title: 'INTERVIEW QUESTIONS: Pull and Run Containerized Applications using Docker CLI' },
-    //     { title: 'INTERVIEW QUESTIONS: Create and Manage Docker Volumes, Networks and Port Bindings' },
-    //     { title: 'INTERVIEW QUESTIONS: Secure Containers and Manage Secets' },
-    //     { title: 'INTERVIEW QUESTIONS: Write DockerFiles to build custom container images' },
-    //     { title: 'INTERVIEW QUESTIONS: Using Docker Compose to build and run multi-container applications' },
-    //     { title: 'INTERVIEW QUESTIONS: Publishing and Pulling Images using Docker Registery' },
-    //     { title: 'INTERVIEW QUESTIONS: Orchestrating containers using Docker Swarm and Kubernetes' },
-    //   ];
+    case 'doc-2':
+      return [
+        { title: 'INTERVIEW QUESTIONS: Install and Configure Docker on Your Local Machine' },
+        { title: 'INTERVIEW QUESTIONS: Pull and Run Containerized Applications using Docker CLI' },
+        { title: 'INTERVIEW QUESTIONS: Create and Manage Docker Volumes, Networks and Port Bindings' },
+        { title: 'INTERVIEW QUESTIONS: Secure Containers and Manage Secets' },
+        { title: 'INTERVIEW QUESTIONS: Write DockerFiles to build custom container images' },
+        { title: 'INTERVIEW QUESTIONS: Using Docker Compose to build and run multi-container applications' },
+        { title: 'INTERVIEW QUESTIONS: Publishing and Pulling Images using Docker Registery' },
+        { title: 'INTERVIEW QUESTIONS: Orchestrating containers using Docker Swarm and Kubernetes' },
+      ];
     default:
       return [
         { title: 'Follow my Linkedin for more updates...' },
