@@ -240,12 +240,12 @@ const About = () => {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center bg-gradient-to-br from-[#F8F6F0]/80 to-[#C7B299]/80 rounded-xl p-5 min-w-[180px] max-w-[220px] transition-transform hover:scale-105 hover:shadow-2xl border border-[#6B46C1]/20"
+                      className="flex flex-col items-center bg-gradient-to-br from-[#1E1B4B]/90 to-[#312E81]/90 rounded-xl p-5 min-w-[180px] max-w-[220px] transition-transform hover:scale-105 hover:shadow-2xl border border-[#6B46C1]/20"
                     >
                       <img src={cert.logo} alt={cert.name + ' logo'} className="w-16 h-16 object-contain mb-2 rounded" />
-                      <span className="font-bold text-lg text-[#1A2233] text-center">{cert.name}</span>
-                      <span className="text-sm text-[#6B46C1] text-center" dangerouslySetInnerHTML={{ __html: cert.issuer }} />
-                      <span className="text-xs text-gray-700 mt-1">{cert.date}</span>
+                      <span className="font-bold text-lg text-white text-center">{cert.name}</span>
+                      <span className="text-sm text-[#A78BFA] text-center" dangerouslySetInnerHTML={{ __html: cert.issuer }} />
+                      <span className="text-xs text-gray-300 mt-1">{cert.date}</span>
                     </a>
                     {isExploding && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">

@@ -325,6 +325,13 @@ export const certifications = [
     date: "September 2025",
     logo: "/assets/logos/aviatrix-associate.png",
     link: "https://www.credly.com/badges/bc359949-6fd2-461f-b640-8ff075663f5b/public_url"
+  },
+  {
+    name: "PagerDuty Practitioner",
+    issuer: "Pagerduty",
+    date: "October 2025",
+    logo: "/assets/logos/pgduty-foundational.png",
+    link: "https://www.credly.com/badges/b91642ce-6288-46ea-b51a-810b9c524e75/public_url"
   }
 ];
 
