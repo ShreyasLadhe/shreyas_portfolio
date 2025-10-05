@@ -307,7 +307,7 @@ export const certifications = [
   },
   {
     name: "ODP Foundations Associate",
-    issuer: "Oracle Data Platform",
+    issuer: "Oracle Cloud Data Platform",
     date: "July 2025",
     logo: "/assets/logos/odpf.png",
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8EF2F8B3241825F8EDACBF03B6C93B80281C91DD7F3321577D68675C84FE3C85"
@@ -332,6 +332,13 @@ export const certifications = [
     date: "October 2025",
     logo: "/assets/logos/pgduty-foundational.png",
     link: "https://www.credly.com/badges/b91642ce-6288-46ea-b51a-810b9c524e75/public_url"
+  },
+  {
+    name: "PagerDuty Administrator",
+    issuer: "Pagerduty",
+    date: "October 2025",
+    logo: "/assets/logos/pgduty-administrator.png",
+    link: "https://www.credly.com/badges/ed7520ee-9713-499f-b296-ba982fdf7653/public_url"
   }
 ];
 
