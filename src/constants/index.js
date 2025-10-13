@@ -154,7 +154,7 @@ export const mySocials = [
   },
   {
     name: "Hashnode",
-    href: "https://clouddevopsfornewbies.hashnode.dev",
+    href: "https://hashnode.com/@nimbusarchitect",
     icon: "/assets/socials/hashnode.svg",
   },
 ];
