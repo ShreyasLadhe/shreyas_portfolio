@@ -1,8 +1,21 @@
-const SERVICE_ID = process.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = process.env.VITE_EMAILJS_PUBLIC_KEY;   
+const SERVICE_ID = process.env.VITE_EMAILJS_SERVICE_ID; 
+const TEMPLATE_ID = process.env.VITE_EMAILJS_TEMPLATE_ID; 
+const PUBLIC_KEY = process.env.VITE_EMAILJS_PUBLIC_KEY;
+
+// Helper to set CORS headers
+const setCorsHeaders = (res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+};
 
 export default async function handler(req, res) {
+    setCorsHeaders(res);
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     if (req.method !== 'POST') {
         return res.status(405).json({ message: 'Method Not Allowed' });
     }
@@ -17,7 +30,7 @@ export default async function handler(req, res) {
         from_name: from_name,
         to_name: "Shreyas",
         from_email: from_email,
-        to_email: "shreyasl9819@gmail.com", 
+        to_email: "hello@shreyas-shack.tech", 
         message: message,
     };
 
@@ -26,7 +39,7 @@ export default async function handler(req, res) {
         template_id: TEMPLATE_ID,
         user_id: PUBLIC_KEY,
         template_params: templateParams,
-        accessToken: PUBLIC_KEY
+        accessToken: PUBLIC_KEY 
     };
 
     try {
@@ -43,7 +56,7 @@ export default async function handler(req, res) {
         } else {
             const errorText = await emailjsResponse.text();
             console.error('EmailJS API Error Response:', emailjsResponse.status, errorText);
-            res.status(emailjsResponse.status).json({ success: false, error: `EmailJS failed with status: ${emailjsResponse.status}.` });
+            res.status(500).json({ success: false, error: "Failed to send email via EmailJS (check Vercel logs)." }); 
         }
     } catch (error) {
         console.error('Vercel Fetch Error:', error);
