@@ -74,7 +74,7 @@ export default async function handler(req, res) {
               <div class="content">
                 <p><strong>From:</strong> ${from_name}</p>
                 <p><strong>Email:</strong> ${from_email}</p>
-                <p><strong>Message:</strong></p>
+                <p><strong>Message</strong></p>
                 <p>${message.replace(/\n/g, '<br>')}</p>
               </div>
               <div class="footer">
