@@ -1,6 +1,6 @@
-const SERVICE_ID = process.env.VITE_EMAILJS_SERVICE_ID; 
-const TEMPLATE_ID = process.env.VITE_EMAILJS_TEMPLATE_ID; 
-const PUBLIC_KEY = process.env.VITE_EMAILJS_PUBLIC_KEY;
+const SERVICE_ID = process.env.EMAILJS_SERVICE_ID; 
+const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID; 
+const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
 
 // Helper to set CORS headers
 const setCorsHeaders = (res) => {
