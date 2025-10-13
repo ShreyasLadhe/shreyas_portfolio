@@ -51,8 +51,8 @@ export default async function handler(req, res) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Chatbot ', // Change after domain verification
-      to: ['shreyasl9819@gmail.com'],
+      from: 'onboarding@resend.dev',
+      to: ['hello@shreyas-shack.tech'],
       reply_to: from_email,
       subject: `New message from ${from_name}`,
       html: `
