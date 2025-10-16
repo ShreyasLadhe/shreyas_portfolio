@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { solutionsProjects } from "../constants";
 
 const Solutions = () => {
-  const navigate = useNavigate();
-
   return (
     <section className="c-space section-spacing">
       <h2 className="text-heading">Solutions Architect Heaven</h2>
@@ -13,7 +10,10 @@ const Solutions = () => {
         {solutionsProjects.map((proj) => (
           <button
             key={proj.slug}
-            onClick={() => navigate(`/solutions/${proj.slug}`)}
+            onClick={() => {
+              if (!proj.hashnodeUrl) return;
+              window.open(proj.hashnodeUrl, "_blank", "noopener,noreferrer");
+            }}
             className="text-left group bg-storm/40 hover:bg-storm/60 rounded-xl overflow-hidden ring-1 ring-gray-700 hover:shadow-lg hover:shadow-black/30 transition-all"
           >
             <div className="aspect-video overflow-hidden">

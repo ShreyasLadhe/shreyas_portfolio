@@ -346,10 +346,11 @@ export const certifications = [
 export const solutionsProjects = [
   {
     slug: "from-exposed-to-exemplary",
-    title: "From Exposed to Exemplary: Startup's Journey to a Secure AWS Cloud ☁️",
-    subtitle: "A Practical Guide to Hardening Cloud Architectures on AWS",
+    title: "Transforming Security: A Startup's Successful Transition to Safe Cloud",
+    subtitle: "Tips for Securing Your AWS Cloud: A Practical Handbook",
     image: "/assets/projects/secure-cart/security-pillar.png",
     cover: "/assets/projects/secure-cart/security-pillar.png",
+    hashnodeUrl: "https://solutions-architect-heaven.hashnode.dev/transforming-security",
     content: [
       {
         heading: "Overview",
@@ -477,11 +478,11 @@ export const solutionsProjects = [
   },
   {
     slug: "The Midnight Scramble",
-    title: "The Midnight Scramble: A DevOps Tale of Woe and Wisdom",
-    subtitle: "Practical Strategies for Resilient, Automated Cloud Operations",
+    title: "Midnight Struggles: A DevOps Adventure of Challenges and Growth",
+    subtitle: "Effective Methods for Robust and Automated Cloud Management",
     image: "/assets/projects/chatops/operational-excellence_pillar.png",
     cover: "/assets/projects/chatops/operational-excellence_pillar.png",
-
+    hashnodeUrl: "https://solutions-architect-heaven.hashnode.dev/midnight-struggles",
     content: [
       {
         heading: "Overview",
