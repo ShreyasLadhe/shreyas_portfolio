@@ -107,6 +107,43 @@ export const myProjects = [
   },
   {
     id: 4,
+    title: "Azure Sensei - AI Learning Assistant",
+    description:
+      "An intelligent n8n workflow that transforms Azure study materials into an interactive AI tutor accessible through Discord, making cloud learning accessible and budget-friendly.",
+    subDescription: [
+      "Built an automated n8n workflow that processes Azure documentation and study materials into a structured knowledge base.",
+      "Integrated Gemini API for content analysis and response generation to create personalized learning experiences.",
+      "Developed a custom Discord bot for seamless user interaction and real-time Q&A capabilities.",
+      "Implemented automated content updates and maintenance tasks to keep the learning material current.",
+    ],
+    href: "https://solutions-architect-heaven.hashnode.dev/azure-sensei",
+    logo: "/assets/projects/azure-sensei-logo.svg", 
+    image: "/assets/projects/azure-sensei.png",
+    tags: [
+      {
+        id: 1,
+        name: "n8n",
+        path: "/assets/logos/n8n.png", 
+      },
+      {
+        id: 2,
+        name: "Gemini",
+        path: "/assets/logos/gemini-ai.svg",
+      },
+      {
+        id: 3,
+        name: "Pinecone",
+        path: "/assets/logos/pinecone.png", 
+      },
+      {
+        id: 4,
+        name: "Discord",
+        path: "/assets/logos/discord.png",
+      },
+    ],
+  },
+  {
+    id: 5,
     title: "Many more coming soon..",
     description:
       "Coming Soon!",
@@ -554,6 +591,54 @@ export const solutionsProjects = [
           "By embracing a culture of continuous improvement and leveraging the full power of the AWS ecosystem, we can transform our operational capabilities from **reactive firefighting to proactive, intelligent**, and ultimately, a more peaceful night's sleep for our on-call engineers.",
         ]
       }
+    ]
+  }
+];
+
+// Workflow Chronicles content
+export const workflowProjects = [
+  {
+    slug: "azure-sensei",
+    title: "Azure Sensei",
+    subtitle: "Learn Azure on a Budget: Transform Study Material to an AI Tutor in Discord",
+    image: "/assets/projects/azure-sensei.png",
+    cover: "/assets/projects/azure-sensei.png",
+    hashnodeUrl: "https://solutions-architect-heaven.hashnode.dev/azure-sensei",
+    description: "An intelligent n8n workflow that transforms Azure study materials into an interactive AI tutor accessible through Discord, making cloud learning accessible and budget-friendly.",
+    tags: ["n8n", "Azure", "AI", "Discord", "Automation"],
+    content: [
+      {
+        heading: "Overview",
+        body: [
+          "Azure Sensei is an innovative n8n workflow that democratizes Azure learning by transforming traditional study materials into an interactive AI-powered tutor accessible through Discord. This solution addresses the common challenge of expensive cloud training resources while providing personalized, on-demand learning support.",
+          "The workflow leverages n8n's powerful automation capabilities to create a seamless bridge between educational content and AI assistance, making Azure certification preparation more accessible and engaging for learners on a budget."
+        ]
+      },
+      {
+        heading: "Key Features",
+        body: [
+          "**Automated Content Processing:** The workflow automatically processes Azure study materials, documentation, and practice questions into a structured knowledge base.",
+          "**Discord Integration:** Users can interact with the AI tutor directly through Discord commands, making learning accessible from anywhere.",
+          "**Personalized Learning Paths:** The AI adapts to individual learning styles and progress, providing customized study recommendations.",
+          "**Cost-Effective Solution:** Eliminates the need for expensive training courses while providing comprehensive Azure learning support.",
+          "**Real-time Q&A:** Instant responses to Azure-related questions with contextual explanations and practical examples."
+        ]
+      },
+      {
+        heading: "Technical Implementation",
+        body: [
+          "The workflow is built using n8n's visual workflow editor, connecting multiple services and APIs to create a comprehensive learning platform:",
+          "> - **Content Ingestion:** Automated scraping and processing of Azure documentation and study materials",
+          "> - **AI Processing:** Integration with AI services for content analysis and response generation",
+          "> - **Discord Bot:** Custom Discord bot for user interaction and command processing",
+          "> - **Database Management:** Efficient storage and retrieval of learning content and user progress",
+          "> - **Scheduling:** Automated content updates and maintenance tasks"
+        ]
+      }
+    ],
+    links: [
+      { label: "n8n Documentation", href: "https://docs.n8n.io" },
+      { label: "Azure Learning Paths", href: "https://learn.microsoft.com/en-us/azure" }
     ]
   }
 ];

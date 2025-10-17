@@ -17,8 +17,8 @@ const Projects = () => {
   const [preview, setPreview] = useState(null);
 
   // Split projects
-  const productionProjects = myProjects.filter((p) => p.id === 1 || p.id === 2 || p.id === 4);
-  const conceptualProjects = myProjects.filter((p) => p.id === 3 || p.id === 4);
+  const productionProjects = myProjects.filter((p) => p.id === 1 || p.id === 2);
+  const conceptualProjects = myProjects.filter((p) => p.id === 3 || p.id === 4 || p.id === 5);
 
   return (
     <section
