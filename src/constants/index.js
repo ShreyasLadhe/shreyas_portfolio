@@ -376,6 +376,13 @@ export const certifications = [
     date: "October 2025",
     logo: "/assets/logos/pgduty-administrator.png",
     link: "https://www.credly.com/badges/ed7520ee-9713-499f-b296-ba982fdf7653/public_url"
+  },
+  {
+    name: "Microsoft GitHub Copilot",
+    issuer: "GitHub",
+    date: "October 2025",
+    logo: "/assets/logos/gh300.png",
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/ShreyasLadhe/4CD8885D2129B90B?sharingId=35477125F4F04F3D"
   }
 ];
 
