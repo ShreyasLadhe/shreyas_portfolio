@@ -5,7 +5,7 @@ const items = [
     id: 'doc-1',
     title: 'Docker Theory Handbook',
     cover: '/covers/docker-theory-handbook-cover.png',
-    file: '/docs/Docker_Handbook-Shreyas Ladhe.pdf'
+    file: '/docs/Docker_Handbook-ShreyasLadhe.pdf'
   },
   {
     id: 'doc-2',
@@ -15,6 +15,12 @@ const items = [
   },
   {
     id: 'doc-3',
+    title: 'Terraform Theory Handbook',
+    cover: '/covers/terraform-theory-handbook-cover.png',
+    file: '/docs/Terraform_Handbook-ShreyasLadhe.pdf'
+  },
+  {
+    id: 'doc-4',
     title: 'Your Go-To Guides',
     cover: '/covers/cover-coming-soon.png',
     file: ''
@@ -44,6 +50,21 @@ const getIndexForItem = (item) => {
         { title: 'INTERVIEW QUESTIONS: Using Docker Compose to build and run multi-container applications' },
         { title: 'INTERVIEW QUESTIONS: Publishing and Pulling Images using Docker Registery' },
         { title: 'INTERVIEW QUESTIONS: Orchestrating containers using Docker Swarm and Kubernetes' },
+      ];
+    case 'doc-3':
+      return [
+        { title: 'Install and Configure Terraform on Your Local Machine' },
+        { title: 'Getting Started with Terraform Basics' },
+        { title: 'Variables, Outputs, and Modules' },
+        { title: 'State Management and Remote Backends' },
+        { title: 'Providers, Resources, and Data Sources' },
+        { title: 'Terraform Provisioners and Advanced Configuration' },
+        { title: 'Securing Terraform: Secrets, Policies, and Workspaces' },
+        { title: 'CI/CD Integration with Terraform' },
+        { title: 'Terraform Registry and Private Modules' },
+        { title: 'Advanced Terraform: Workflows and Patterns' },
+        { title: 'Orchestration with Terraform and Multi-Cloud' },
+        { title: 'Terraform Best Practices, Troubleshooting, and Debugging' },
       ];
     default:
       return [
@@ -141,7 +162,7 @@ const CloudContributions = () => {
               </button>
             </div>
 
-            <div className="px-6 py-4 max-h-[70vh] overflow-auto">
+            <div className="px-6 py-4 max-h-[80vh] overflow-auto">
               <ol className="space-y-3">
                 {getIndexForItem(selectedItem || { id: 'unknown' }).map((entry, idx) => (
                   <li key={idx} className="flex items-start gap-3 rounded-lg bg-black/60 hover:bg-black/50 transition-colors p-3">
