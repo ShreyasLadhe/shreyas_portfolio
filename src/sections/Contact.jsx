@@ -1,6 +1,17 @@
-
+import { useEffect } from "react";
 import { Particles } from "../components/Particles";
 const Contact = () => {
+  useEffect(() => {
+    const existing = document.querySelector(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+    );
+    if (!existing) {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
   return (
     <section className="relative flex items-center c-space section-spacing">
       <Particles
@@ -107,6 +118,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      {/* Calendly inline widget */}
+      <div
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/shreyasladhe/lets-talk?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff"
+            style={{ minWidth: "320px", height: "700px" }}
+          ></div>
       </div>
     </section>
   );
