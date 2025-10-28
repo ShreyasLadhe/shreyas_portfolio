@@ -144,6 +144,48 @@ export const myProjects = [
   },
   {
     id: 5,
+    title: "Mr. Helpful - AI Customer Support Agent",
+    description:
+      "An AI-powered n8n workflow that automates customer support operations by classifying incoming emails, generating RAG-based AI responses using Gemini and Pinecone, and routing feature requests directly to developer channels in Discord.",
+    subDescription: [
+      "Built an end-to-end n8n workflow that classifies incoming support emails into categories such as Support, Feature Request, and Others using Google Gemini.",
+      "Integrated a Retrieval-Augmented Generation (RAG) pipeline using Pinecone and Gemini to generate contextual and empathetic AI responses.",
+      "Implemented threaded Gmail replies and labeling for organized, auditable, and SLA-compliant support communication.",
+      "Automated feature request handling by sending structured requests to a Discord developer channel for collaboration and review.",
+    ],
+    href: "https://solutions-architect-heaven.hashnode.dev/mr-helpful",
+    logo: "/assets/projects/azure-sensei-logo.svg", 
+    image: "/assets/projects/mr-helpful.png",
+    tags: [
+      {
+        id: 1,
+        name: "n8n",
+        path: "/assets/logos/n8n.png", 
+      },
+      {
+        id: 2,
+        name: "Gemini",
+        path: "/assets/logos/gemini-ai.svg",
+      },
+      {
+        id: 3,
+        name: "Pinecone",
+        path: "/assets/logos/pinecone.png", 
+      },
+      {
+        id: 4,
+        name: "Discord",
+        path: "/assets/logos/discord.png",
+      },
+      {
+        id: 5,
+        name: "Gmail",
+        path: "/assets/logos/gmail.png",
+      },
+    ],
+  },
+  {
+    id: 6,
     title: "Many more coming soon..",
     description:
       "Coming Soon!",
@@ -687,20 +729,6 @@ export const workflowProjects = [
           "> - **Gmail Reply Node:** Sends the AI-generated message as a threaded response and applies a 'Customer Support' label for tracking.",
           "> - **Discord Node:** Sends structured feature request summaries directly to a Discord developer channel for review.",
           "> - **Logging & Control Flow:** Every action is logged and auditable, allowing easy troubleshooting and transparency."
-        ]
-      },
-      {
-        heading: "Workflow Architecture",
-        body: [
-          "The architecture follows a decision-based branching pattern that separates Support and Feature Request handling while maintaining full automation:",
-          "| Step | Component | Description |",
-          "|------|------------|--------------|",
-          "| 1 | Gmail Trigger | Listens for new incoming support emails |",
-          "| 2 | Classify Emails (Gemini) | Determines if the message is a support issue, feature request, or other |",
-          "| 3 | Mr. Helpful (RAG Agent) | Generates AI-based responses using Gemini + Pinecone |",
-          "| 4 | Label & Reply | Labels the email as 'Customer Support' and replies within the same thread |",
-          "| 5 | Discord Notification | Sends feature requests directly to the dev channel for action |",
-          "| 6 | Logging | Stores detailed logs for auditing and transparency |"
         ]
       },
       {
