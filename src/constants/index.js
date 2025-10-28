@@ -647,5 +647,76 @@ export const workflowProjects = [
       { label: "n8n Documentation", href: "https://docs.n8n.io" },
       { label: "Azure Learning Paths", href: "https://learn.microsoft.com/en-us/azure" }
     ]
+  },
+  {
+    slug: "mr-helpful",
+    title: "Mr. Helpful",
+    subtitle: "AI-Powered Customer Support Automation with n8n, Gemini, and Pinecone",
+    image: "/assets/projects/mr-helpful.png",
+    cover: "/assets/projects/mr-helpful.png",
+    hashnodeUrl: "https://solutions-architect-heaven.hashnode.dev/mr-helpful",
+    description:
+      "An intelligent n8n workflow that automates customer support operations by classifying incoming emails, generating RAG-based AI responses using Gemini and Pinecone, and routing feature requests directly to developer channels in Discord.",
+    tags: ["n8n","Automation","Discord", "Customer Support"],
+  
+    content: [
+      {
+        heading: "Overview",
+        body: [
+          "Mr. Helpful is an AI-powered customer support workflow designed to automate support operations using n8n, Google Gemini, and Pinecone. It classifies incoming support emails, generates empathetic AI responses using retrieval-augmented generation (RAG), and routes feature requests directly to development teams through Discord.",
+          "This workflow was originally developed for the Azure Sensei project to handle incoming user queries and feature requests automatically, enabling efficient triage, context-aware responses, and seamless collaboration between support and engineering teams."
+        ]
+      },
+      {
+        heading: "Key Features",
+        body: [
+          "**AI-Driven Email Classification:** Automatically categorizes incoming emails into Support, Feature Request, or Other using Google Gemini’s large language model capabilities.",
+          "**RAG-Powered Support Responses:** Uses Pinecone as a vector store to retrieve relevant documentation and generate accurate, contextual replies via Gemini — making Mr. Helpful an intelligent virtual support agent.",
+          "**Threaded Gmail Replies:** Replies directly within the existing Gmail thread instead of creating new messages, ensuring clean and auditable communication history.",
+          "**Discord Integration for Feature Requests:** Automatically forwards new feature requests to a designated developer channel in Discord for discussion and implementation.",
+          "**Scalable & Transparent:** Maintains complete visibility into every workflow execution with structured logs and organized Gmail labeling for better SLA management."
+        ]
+      },
+      {
+        heading: "Technical Implementation",
+        body: [
+          "The workflow was built using n8n’s low-code orchestration engine, connecting cloud services, AI models, and communication tools to create an autonomous support pipeline:",
+          "> - **Gmail Trigger:** Detects incoming support or feature request emails in real time.",
+          "> - **Gemini Model (Classification):** Analyzes and classifies each email based on its content and intent.",
+          "> - **Mr. Helpful (RAG Agent):** Uses Gemini integrated with Pinecone to fetch relevant context from the knowledge base and craft professional, empathetic replies.",
+          "> - **Gmail Reply Node:** Sends the AI-generated message as a threaded response and applies a 'Customer Support' label for tracking.",
+          "> - **Discord Node:** Sends structured feature request summaries directly to a Discord developer channel for review.",
+          "> - **Logging & Control Flow:** Every action is logged and auditable, allowing easy troubleshooting and transparency."
+        ]
+      },
+      {
+        heading: "Workflow Architecture",
+        body: [
+          "The architecture follows a decision-based branching pattern that separates Support and Feature Request handling while maintaining full automation:",
+          "| Step | Component | Description |",
+          "|------|------------|--------------|",
+          "| 1 | Gmail Trigger | Listens for new incoming support emails |",
+          "| 2 | Classify Emails (Gemini) | Determines if the message is a support issue, feature request, or other |",
+          "| 3 | Mr. Helpful (RAG Agent) | Generates AI-based responses using Gemini + Pinecone |",
+          "| 4 | Label & Reply | Labels the email as 'Customer Support' and replies within the same thread |",
+          "| 5 | Discord Notification | Sends feature requests directly to the dev channel for action |",
+          "| 6 | Logging | Stores detailed logs for auditing and transparency |"
+        ]
+      },
+      {
+        heading: "Future Enhancements",
+        body: [
+          "The next iteration of Mr. Helpful will introduce a human-in-the-loop approval system for feature requests, routing them to the product team before development. Planned upgrades also include multilingual support, analytics dashboards for performance tracking, and integration with project management tools like Jira or Linear."
+        ]
+      }
+    ],
+  
+    links: [
+      { label: "Hashnode Article", href: "https://solutions-architect-heaven.hashnode.dev/mr-helpful" },
+      { label: "Workflow Template", href: "https://drive.google.com/file/d/1iOPQtsImj9aaarKeDwZz-eFPONzd3Lrl/view?usp=sharing" },
+      { label: "n8n Documentation", href: "https://docs.n8n.io" },
+      { label: "Pinecone Docs", href: "https://docs.pinecone.io" },
+      { label: "Google Gemini API", href: "https://ai.google.dev/gemini-api/docs" }
+    ]
   }
 ];
