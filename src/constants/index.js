@@ -425,6 +425,13 @@ export const certifications = [
     date: "October 2025",
     logo: "/assets/logos/gh300.png",
     link: "https://learn.microsoft.com/api/credentials/share/en-us/ShreyasLadhe/4CD8885D2129B90B?sharingId=35477125F4F04F3D"
+  },
+  {
+    name: "Introduction to Linux",
+    issuer: "Linux Foundation",
+    date: "December 2025",
+    logo: "/assets/logos/lfs101.png",
+    link: "https://www.credly.com/badges/5a05dbc2-5613-4a6c-90d8-c892325005ef/public_url"
   }
 ];
 
