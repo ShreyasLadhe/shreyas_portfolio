@@ -240,6 +240,23 @@ export const mySocials = [
 
 export const experiences = [
   {
+    company: "Searce",
+    location: "Mumbai, India",
+    remote: true,
+    logo: "/assets/logos/searce.png",
+    roles: [
+      {
+        title: "Associate Cloud Engineer",
+        date: "Dec 2025 - Present",
+        contents: [
+          "Working on developing this..."
+        ],
+        skills: ["Google Cloud Platform", "Terraform", "Docker", "Kubernetes", "GitLab", "Zoho Suite"],
+        isCurrent: true
+      },
+    ]
+  },
+  {
     company: "ZeroToCloud",
     location: "Australia",
     remote: true,
@@ -254,7 +271,7 @@ export const experiences = [
           "Collaborated closely with the content and design teams to ensure seamless integration of technical content with frontend components."
         ],
         skills: ["AWS", "Web Development", "React", "Authentication", "Exam Portals"],
-        isCurrent: true
+        isCurrent: false
       },
       {
         title: "Cloud Engineer - Contract",
