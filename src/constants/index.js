@@ -449,6 +449,13 @@ export const certifications = [
     date: "December 2025",
     logo: "/assets/logos/lfs101.png",
     link: "https://www.credly.com/badges/5a05dbc2-5613-4a6c-90d8-c892325005ef/public_url"
+  },
+  {
+    name: "Snowflake Certified SnowPro Associate",
+    issuer: "Snowflake",
+    date: "December 2025",
+    logo: "/assets/logos/snowpro.png",
+    link: "https://achieve.snowflake.com/b93a373b-2d6c-44b1-a2d3-4c819f179d4d#acc.kL6K9EUP"
   }
 ];
 
