@@ -265,7 +265,7 @@ export const experiences = [
     roles: [
       {
         title: "Cloud Engineer Intern",
-        date: "Aug 2025 - Present",
+        date: "Aug 2025 - Dec 2025",
         contents: [
           "Designed and developed responsive websites for ZeroToCloud's cloud computing courses, ensuring performance, SEO optimization, and mobile compatibility.", 
           "Architected resilient and highly available architecture solutions that align with AWS Well Architect Framework pillars",

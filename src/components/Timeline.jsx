@@ -192,6 +192,12 @@ export const Timeline = ({ data }) => {
                               Remote
                             </span>
                           )}
+                          {company.onsite && (
+                            <span className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-orange-500/20 to-amber-500/20 text-orange-400 rounded-full border border-orange-500/30 backdrop-blur-sm">
+                              <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                              Onsite
+                            </span>
+                          )}
                         </div>
                 </div>
               </div>
