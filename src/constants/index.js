@@ -328,7 +328,7 @@ export const experiences = [
           "Collaborated with Microsoft to promote learning initiatives on campus.",
         ],
         skills: ["Microsoft Azure", "Workshop Organization", "Student Mentoring", "Event Management"],
-        isCurrent: true
+        isCurrent: false
       }
     ]
   }
