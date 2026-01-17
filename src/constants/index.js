@@ -321,7 +321,7 @@ export const experiences = [
     roles: [
       {
         title: "Technical Core Member",
-        date: "Sep 2024 - Present",
+        date: "Sep 2024 - Dec 2025",
         contents: [
           "Organized technical workshops and hackathons for university students.",
           "Mentored peers in cloud computing and development technologies.",
