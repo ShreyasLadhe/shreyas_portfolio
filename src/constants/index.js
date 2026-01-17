@@ -242,7 +242,8 @@ export const experiences = [
   {
     company: "Searce",
     location: "Mumbai, India",
-    remote: true,
+    remote: false,
+    onsite: true,
     logo: "/assets/logos/searce.png",
     roles: [
       {
