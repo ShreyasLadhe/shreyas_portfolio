@@ -111,9 +111,10 @@ const About = () => {
       {/* Certifications Block */}
       <div className="w-full my-8 p-6 rounded-xl bg-gradient-to-r from-indigo via-primary to-storm shadow-lg flex flex-col items-center">
         <h3 className="text-2xl font-semibold mb-8 text-white">Certifications</h3>
-        <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
-          {/* AWS Section */}
-          <div className="flex-1 rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#FF9900]/40 relative overflow-hidden"
+        {/* Top row: AWS 50% | Azure 50% */}
+        <div className="flex flex-col md:flex-row gap-8 w-full">
+          {/* AWS Section - Top Left 50% */}
+          <div className="w-full md:w-1/2 rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#FF9900]/40 relative overflow-hidden"
                style={{
                  background: 'linear-gradient(135deg, rgba(24,28,47,0.85) 0%, rgba(35,43,77,0.85) 60%, rgba(58,43,95,0.85) 100%)',
                  backdropFilter: 'blur(12px)',
@@ -161,15 +162,65 @@ const About = () => {
               })}
             </div>
           </div>
-          {/* Oracle Section */}
-          <div className="flex-1 rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#F80000]/20 relative overflow-hidden"
+          {/* Azure Section - Top Right 50% */}
+          <div className="w-full md:w-1/2 rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#0078D4]/40 relative overflow-hidden"
+               style={{
+                 background: 'linear-gradient(135deg, rgba(0,32,80,0.85) 0%, rgba(0,56,168,0.85) 60%, rgba(0,120,212,0.25) 100%)',
+                 backdropFilter: 'blur(12px)',
+                 WebkitBackdropFilter: 'blur(12px)',
+                 boxShadow: '0 4px 32px 0 rgba(0,120,212,0.2), 0 0 0 1.5px #0078D455 inset',
+               }}>
+            <div className="pointer-events-none absolute inset-0 z-0" style={{background: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0, transparent 60%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 0, transparent 70%)'}} />
+            <div className="flex items-center gap-2 mb-6 z-10">
+              <span className="text-2xl font-semibold text-[#0078D4] tracking-wide font-sans" style={{textShadow: '0 2px 8px rgba(0,32,80,0.5), 0 1px 0 #fff2'}}>Azure Certifications</span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 w-full">
+              {certifications.filter(cert => cert.issuer.toLowerCase().includes('azure')).map((cert, idx) => {
+                const [isExploding, setIsExploding] = useState(false);
+                return (
+                  <div
+                    key={cert.name + idx}
+                    className="relative"
+                    onMouseEnter={() => setIsExploding(true)}
+                    onMouseLeave={() => setIsExploding(false)}
+                  >
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center bg-gradient-to-br from-[#003366]/80 to-[#004578]/80 rounded-xl p-5 min-w-[180px] max-w-[220px] transition-transform hover:scale-105 hover:shadow-2xl border border-[#0078D4]/20"
+                    >
+                      <img src={cert.logo} alt={cert.name + ' logo'} className="w-16 h-16 object-contain mb-2 rounded" />
+                      <span className="font-bold text-lg text-white text-center">{cert.name}</span>
+                      <span className="text-sm text-[#50E6FF] text-center" dangerouslySetInnerHTML={{ __html: cert.issuer }} />
+                      <span className="text-xs text-gray-300 mt-1">{cert.date}</span>
+                    </a>
+                    {isExploding && (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+                        <ConfettiExplosion
+                          particleCount={80}
+                          duration={2200}
+                          width={300}
+                          force={0.6}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Oracle - Full Width */}
+        <div className="w-full mt-8">
+          <div className="rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#F80000]/20 relative overflow-hidden w-full"
                style={{
                  background: 'linear-gradient(135deg, rgba(43,34,58,0.85) 0%, rgba(77,35,77,0.85) 60%, rgba(58,43,95,0.85) 100%)',
                  backdropFilter: 'blur(12px)',
                  WebkitBackdropFilter: 'blur(12px)',
                  boxShadow: '0 4px 32px 0 rgba(77,35,77,0.18), 0 0 0 1.5px #B2222255 inset',
                }}>
-            {/* Animated stars overlay */}
             <div className="pointer-events-none absolute inset-0 z-0" style={{background: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.07) 0, transparent 60%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0, transparent 70%)'}} />
             <div className="flex items-center gap-2 mb-6 z-10">
               <span className="text-2xl font-semibold text-[#B22222] tracking-wide font-sans" style={{textShadow: '0 2px 8px #4D234D88, 0 1px 0 #fff2'}}>Oracle Cloud Infrastructure</span>
@@ -212,7 +263,7 @@ const About = () => {
           </div>
         </div>
         
-        {/* Others Section - Full Width Row */}
+        {/* Others - Full Width */}
         <div className="w-full mt-8">
           <div className="rounded-3xl p-8 shadow-2xl flex flex-col items-center border border-[#6B46C1]/20 relative overflow-hidden"
                style={{
@@ -227,7 +278,7 @@ const About = () => {
               <span className="text-2xl font-semibold text-[#6B46C1] tracking-wide font-sans" style={{textShadow: '0 2px 8px #4B234B88, 0 1px 0 #fff2'}}>Others</span>
             </div>
             <div className="flex flex-wrap justify-center gap-6 w-full">
-              {certifications.filter(cert => !cert.issuer.toLowerCase().includes('amazon') && !cert.issuer.toLowerCase().includes('oracle')).map((cert, idx) => {
+              {certifications.filter(cert => !cert.issuer.toLowerCase().includes('amazon') && !cert.issuer.toLowerCase().includes('oracle') && !cert.issuer.toLowerCase().includes('azure')).map((cert, idx) => {
                 const [isExploding, setIsExploding] = useState(false);
                 return (
                   <div

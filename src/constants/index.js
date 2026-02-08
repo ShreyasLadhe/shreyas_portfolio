@@ -259,7 +259,7 @@ export const experiences = [
   },
   {
     company: "ZeroToCloud",
-    location: "Australia",
+    location: "Sydney, Australia",
     remote: true,
     logo: "/assets/logos/zerotocloud.jpg",
     roles: [
@@ -415,6 +415,13 @@ export const certifications = [
     date: "July 2025",
     logo: "/assets/logos/ociaa.png",
     link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=BA7D0F669BF7D5795678AC9510F69D852234235E7A258D3F2930AE3D8F4BA278"
+  },
+  {
+    name: "AZ-900: Azure Fundamentals",
+    issuer: "Microsoft Azure",
+    date: "February 2026",
+    logo: "/assets/logos/az900.svg",
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/ShreyasLadhe/853BDA73D3D9BDB6?sharingId=35477125F4F04F3D"
   },
   {
     name: "Aviatrix MultiCloud Network Associate",
