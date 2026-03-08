@@ -424,6 +424,13 @@ export const certifications = [
     link: "https://learn.microsoft.com/api/credentials/share/en-us/ShreyasLadhe/853BDA73D3D9BDB6?sharingId=35477125F4F04F3D"
   },
   {
+    name: "AI-900: AI Fundamentals",
+    issuer: "Microsoft Azure",
+    date: "March 2026",
+    logo: "/assets/logos/az900.svg",
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/ShreyasLadhe/8AD673552D3D573D?sharingId=35477125F4F04F3D"
+  },
+  {
     name: "Aviatrix MultiCloud Network Associate",
     issuer: "Aviatrix",
     date: "September 2025",
